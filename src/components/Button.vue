@@ -1,6 +1,6 @@
 <template>
     <button @click="onClick()" class="p-2 pb-3 rounded-lg" :class="bg">
-        <slot> </slot>
+        {{ text }}
     </button>
 </template>
 
@@ -11,12 +11,14 @@ export default {
         return {};
     },
     props: {
+        text: String,
+        text: String,
         bg: String,
     },
-    methods:{
-        onClick(){
-            
-        }
-    }
-}
+    methods: {
+        onClick() {
+            this.$emit("btn-click");
+        },
+    },
+};
 </script>
